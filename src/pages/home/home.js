@@ -1,35 +1,45 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import { createStore } from '../../utils/createStore';
 
 import './home.css';
-import homeReducer from './homeReducer';
-
 import MyInfo from '../../components/myInfo/myInfo';
 import WeatherInfo from '../../components/weatherInfo/weatherInfo';
 
-import { getStorage, setStorage } from '../../utils/localStorage';
+import { setGreetings, setTime } from '../../components/myInfo/MyInfoActions';
+import { setWeather } from '../../components/weatherInfo/Actions';
 
-export default class Content extends Component {
+export class HomePage extends Component {
 	constructor(props)
-    {
-        super(props); 
-        this.store = createStore(homeReducer);        
+{
+		super(props); 
 	}
 
-    componentWillMount() {
-        setStorage('name', 'Aarthi');        
-    }
+	componentDidMount() {
+		this.props.dispatchSetGreetings();
+		this.props.dispatchSetTime(); 
+		this.props.dispatcSetWeather();           
+	}
 
-    render() {
-        const name = getStorage('name');
-        console.log(name);
-        return <Provider store={this.store}>
-                <div className='app'>
-                    <MyInfo name={name}/>
-                    <WeatherInfo />
-             </div>
-        </Provider>
-        
-    }
+	render() {
+		const { info, weather } =this.props;
+		return <div className='app'>
+                <MyInfo  {...info}/>
+                <WeatherInfo {...weather} />
+            </div>;
+	}
 } 
+
+const mapStateToProps = (state) => ({
+	i18n: state.i18n,
+	info: state.info,
+	weather: state.weather
+});
+
+export default connect(
+mapStateToProps, {
+	dispatchSetGreetings: setGreetings,
+	dispatchSetTime: setTime,
+	dispatcSetWeather: setWeather
+}
+)(HomePage);

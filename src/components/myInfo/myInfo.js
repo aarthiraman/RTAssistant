@@ -1,29 +1,27 @@
-import React, {Component } from 'react';
-import './myInfo.css';
-import { getGreetings, getLocalTime, ISTTime } from './getLocalTime';
+import React from 'react';
+import './MyInfo.css';
 
-export default function myInfo({ name }) {
-
-    return <div className='app-info'>
+export default function myInfo({ greetings, ISTTime, localTime }) {
+	return <div className='app-info'>
             <div class="grid">
                 <div class="cell">
                     <div class="grid">
                     <div class="cell">
-                        <h2>{getGreetings()}, {name}</h2>
+                        <h2>{greetings}</h2>
                     </div>
                     </div>
                     <div class="grid">
                             <div class="cell block-color">
                                 <h3>Time here</h3>
-                                {getLocalTime()}
+                                {localTime}
                             </div>
                             <div class="cell block-color">
                                 <h3>Time at home</h3>
-                                {ISTTime()}
+                                {ISTTime}
                             </div>
                     </div>
                 </div>
               
             </div>
-        </div>
+        </div>;
 } 

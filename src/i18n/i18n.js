@@ -1,5 +1,5 @@
 export default {
-    en: {
-        greetings : 'Hello'
-    }
-}
+	en: {
+		greetings : 'Hello'
+	}
+};

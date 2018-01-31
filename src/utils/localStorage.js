@@ -1,20 +1,20 @@
 export function getStorage(key) {
-    const appData = localStorage.getItem('RTapp');
-    const parsedData = JSON.parse(appData || '{}');
-    return parsedData[key];
+	const appData = localStorage.getItem('RTapp');
+	const parsedData = JSON.parse(appData || '{}');
+	return parsedData[key];
 }
 
 export function setStorage(key, value) {
-    const appData = localStorage.getItem('RTapp');
-    const parsedData = JSON.parse(appData || '{}');
-    
-    let newData = {};
-    newData[key] = value;
+	const appData = localStorage.getItem('RTapp');
+	const parsedData = JSON.parse(appData || '{}');
 
-    const stringifyData = JSON.stringify({
-        ...parsedData,
-        ...newData
-    });
+	let newData = {};
+	newData[key] = value;
 
-    localStorage.setItem('RTapp', stringifyData);
+	const stringifyData = JSON.stringify({
+		...parsedData,
+		...newData
+	});
+
+	localStorage.setItem('RTapp', stringifyData);
 }
