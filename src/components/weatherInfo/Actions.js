@@ -1,5 +1,5 @@
 import { 
-WEATHER_SET
+	WEATHER_SET
 } from '../../constants/ActionTypes';
 import { getWeatherDetails } from '../weatherInfo/weatherService';
 

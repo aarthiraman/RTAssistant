@@ -23,11 +23,6 @@ let options ={
 				}
 			},
 			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: 'eslint-loader'
-			},
-			{
 				test: /\.jsx?$/,
 				loader: 'babel-loader',
 				exclude: /node_modules/,

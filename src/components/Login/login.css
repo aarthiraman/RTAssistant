@@ -1,0 +1,33 @@
+.logged-in__wrapper:hover .login-in__container, .login-in__container:hover {
+    width: 85%;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 60px;
+    z-index: 5;
+    display: block;
+    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
+    margin: 0 auto;
+}
+
+
+.logged-in__icon {
+    background: green;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 2;
+}
+
+.login-in__container {
+    display: none;
+}
+
+.login-in__container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

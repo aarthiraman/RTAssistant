@@ -1,26 +1,19 @@
 import { 
-	WEATHER_SET
+	LOGIN_CHECK
 } from '../../constants/ActionTypes';
 
 
 const initialState = {
-	temp: '',
-	date: '',
-	day: '',
-	advice : '',
-	iconClass: ''
+	loggedIn: false
 };
 
 export default function MyInfoReducer(state = initialState, action) {
 	switch (action.type) {
-	case WEATHER_SET: 
+	case LOGIN_CHECK: 
 		return { 
 			...state,
-			temp: action.temp,
-			date: action.data,
-			day: action.day,
-			advice : action.advice,
-			iconClass: action.iconClass
+			loggedIn: action.loggedIn,
+			data: action.loggedIn? action.data.res : {}
 		};
 	default: {
 		return state;

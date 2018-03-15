@@ -20,14 +20,14 @@ export function getGreetings() {
 export function setTime() {    
 	return (dispatch, getState) => {
 		const localTime = format(
-            new Date(),
-            'h:mm A'
-        );
+			new Date(),
+			'h:mm A'
+		);
 
 		const ISTTime = format(
-            add_hours(new Date(), -5.5),
-            'h:mm A'
-        );
+			add_hours(new Date(), -5.5),
+			'h:mm A'
+		);
 
 		dispatch({
 			type: REFRESH_TIME,

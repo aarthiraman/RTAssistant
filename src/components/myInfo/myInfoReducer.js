@@ -1,6 +1,6 @@
 import { 
-REFRESH_TIME,
-SET_GREETINGS
+	REFRESH_TIME,
+	SET_GREETINGS
 } from '../../constants/ActionTypes';
 
 

@@ -1,0 +1,19 @@
+.recomm-item, .recomm-item__selected {
+    list-style: none;
+    display: inline-flex;
+    padding: 15px 24px;
+    margin: 20px 17px 0 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.recomm-item.recomm-item__selected {
+    opacity: 1;    
+}
+
+.recomm-item:nth-child(1n) {    background: #0A7AA2; }
+.recomm-item:nth-child(2n) {    background: #3095A0; }
+.recomm-item:nth-child(3n) {    background: #53B9A9; }
+.recomm-item:nth-child(4n) {    background: #48A37B; }
+.recomm-item:nth-child(5n) {    background: #4AA263; }
